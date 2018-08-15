@@ -1,10 +1,7 @@
 package com.bruce.metaauditor.utils;
 
-import com.bruce.metaauditor.contract.HVDAuditorContract;
-import com.bruce.metaauditor.contract.RegisterContract;
 import org.web3j.crypto.Credentials;
 import org.web3j.protocol.Web3j;
-import org.web3j.protocol.core.methods.request.EthFilter;
 import org.web3j.protocol.http.HttpService;
 
 /**

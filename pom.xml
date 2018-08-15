@@ -26,6 +26,13 @@
   </properties>
 
   <dependencies>
+    <!-- https://mvnrepository.com/artifact/org.web3j/codegen -->
+    <dependency>
+      <groupId>org.web3j</groupId>
+      <artifactId>codegen</artifactId>
+      <version>3.2.0</version>
+    </dependency>
+
     <dependency>
       <groupId>org.web3j</groupId>
       <artifactId>core</artifactId>

@@ -18,7 +18,7 @@ https://github.com/web3j/web3j/releases/tag/v3.2.0
 
 ```shell
 $ web3j truffle generate --javaTypes ./HVDAuditor.json -o  . -p com.bruce.metaauditor.contract
-$ web3j truffle generate --javaTypes /Register.json -o  . -p com.bruce.metaauditor.contract
+$ web3j truffle generate --javaTypes ./Register.json -o  . -p com.bruce.metaauditor.contract
 
 ```
 

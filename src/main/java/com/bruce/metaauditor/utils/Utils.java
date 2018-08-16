@@ -11,13 +11,13 @@ import org.web3j.protocol.http.HttpService;
  * @Version
  */
 public class Utils {
-    public static RegisterContract getRegisterContract(Credentials credentials, String contractAdress){
-        Web3j web3j = Web3j.build(new HttpService());
-        return new RegisterContract(contractAdress, web3j, credentials, Constants.GAS_PRICE, Constants.GAS_LIMIT);
-
-    }
-    public static HVDAuditorContract getHVDAuditorContract(Credentials credentials, String contractAdress){
-        Web3j web3j = Web3j.build(new HttpService());
-        return new HVDAuditorContract(contractAdress, web3j, credentials, Constants.GAS_PRICE, Constants.GAS_LIMIT);
-    }
+    //public static RegisterContract getRegisterContract(Credentials credentials, String contractAdress){
+    //    Web3j web3j = Web3j.build(new HttpService());
+    //    return new RegisterContract(contractAdress, web3j, credentials, Constants.GAS_PRICE, Constants.GAS_LIMIT);
+//
+  //  }
+    //public static HVDAuditorContract getHVDAuditorContract(Credentials credentials, String contractAdress){
+    //    Web3j web3j = Web3j.build(new HttpService());
+    //    return new HVDAuditorContract(contractAdress, web3j, credentials, Constants.GAS_PRICE, Constants.GAS_LIMIT);
+   // }
 }

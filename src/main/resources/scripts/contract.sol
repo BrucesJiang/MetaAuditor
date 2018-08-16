@@ -51,11 +51,11 @@ contract Register {
         userPool[username].password = keccak256(abi.encodePacked(newPassword));
     }
 
-    function addHVD(string username, string hvd, string salt) public{
+    function addHVD(string username, string hvd, string salt, string size) public{
         require(msg.sender != owner);
 
         HVDAuditor a = new HVDAuditor();
-        a.addHVD(username, hvd, salt);
+        a.addHVD(username, hvd, salt, size);
 
     }
 }
@@ -65,12 +65,13 @@ contract HVDAuditor {
         string username;
         string hvd;
         string salt;
+        string size;
     }
 
     HVD[] hvds;
     constructor() public{}
-    function addHVD(string username, string hvd, string result) public {
-        hvds.push(HVD(username, hvd, result));
+    function addHVD(string username, string hvd, string salt, string size) public {
+        hvds.push(HVD(username, hvd, salt, size));
     }
 
     function returnTotal() constant public returns (uint) {
@@ -90,9 +91,14 @@ contract HVDAuditor {
         return hvds[id].salt;
     }
 
-    function getHvdAndSalt(uint id) constant public returns (string hvd, string salt) {
+    function getSize(uint id) constant public returns (string) {
+        return hvds[id].size;
+    }
+
+    function getHvdAndSalt(uint id) constant public returns (string hvd, string salt, string size) {
         hvd = hvds[id].hvd;
         salt = hvds[id].salt;
+        size = hvds[id].size;
     }
 }
 

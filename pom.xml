@@ -27,6 +27,7 @@
 
   <dependencies>
 
+
     <dependency>
       <groupId>commons-codec</groupId>
       <artifactId>commons-codec</artifactId>
@@ -251,5 +252,19 @@
         </plugin>
       </plugins>
     </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.jetty</groupId>
+        <artifactId>jetty-maven-plugin</artifactId>
+        <version>9.3.7.v20160115</version>
+        <configuration>
+          <httpConnector>
+            <port>8080</port>
+            <host>localhost</host>
+          </httpConnector>
+          <scanIntervalSeconds>1</scanIntervalSeconds>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 </project>

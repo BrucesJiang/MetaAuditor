@@ -4,4 +4,28 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+
+    <!-- 配置DispatcherServlet 中央控制器的Servlet -->
+    <servlet>
+        <servlet-name>dispatcher</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <!-- 配置 springMVC 需要加载的配置文件
+            spring-dao.xml , spring-service.xml, spring-controller.xml 整合
+            Mybatis ->spring -> springMVC 整合顺序
+        -->
+        <!--<init-param> &lt;!&ndash; 将其加载到中央控制器， 告诉springMVC有哪些配置文件&ndash;&gt;-->
+        <!--<param-name>contextConfigLocation</param-name>-->
+        <!--<param-value>classpath:spring/spring-*.xml</param-value>-->
+        <!--</init-param>-->
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath*:spring/spring-web.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>dispatcher</servlet-name>
+        <!-- 默认匹配所有请求  注意这里的配置-->
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
 </web-app>
